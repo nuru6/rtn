@@ -62,16 +62,13 @@ function func() {
             document.querySelector(".b52").classList.add("act");
         } else {
             document.querySelector(".b52").classList.remove("act");
-            document.querySelector(".n7").classList.add("act");
+            document.querySelector(".b53").classList.add("act");
         };
-    } else if (h == 21) {
+    } else if (h == 21 || h == 22) {
+        document.querySelector(".b53").classList.remove("act");
         document.querySelector(".n7").classList.add("act");
-    } else if (h == 22) {
-        if (m < 30) {
-            document.querySelector(".n7").classList.add("act");
-        } else {
-            document.querySelector(".n7").classList.remove("act");
-        };
+    } else {
+        document.querySelector(".n7").classList.remove("act");
     };
 };
 func();
