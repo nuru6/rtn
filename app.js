@@ -19,6 +19,7 @@ function func() {
     } else if (h == 11) {
         document.querySelector(".n3").classList.add("act");
     } else if (h == 12) {
+        document.querySelector(".n3").classList.remove("act");
         if (m < 30) {
             document.querySelector(".b2").classList.add("act");
         } else {
