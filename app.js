@@ -44,20 +44,34 @@ function func() {
             document.querySelector(".b4").classList.add("act");
         } else {
             document.querySelector(".b4").classList.remove("act");
-            document.querySelector(".n6").classList.add("act");
+            document.querySelector(".n61").classList.add("act");
         };
     } else if (h == 18) {
-        document.querySelector(".n6").classList.add("act");
-    } else if (h == 19) {
         if (m < 30) {
-            document.querySelector(".n6").classList.add("act");
+            document.querySelector(".n61").classList.add("act");
         } else {
-            document.querySelector(".n6").classList.remove("act");
-            document.querySelector(".b5").classList.add("act");
+            document.querySelector(".n61").classList.remove("act");
+            document.querySelector(".b51").classList.add("act");
         };
-    } else if (h == 20 || h == 21) {
-        document.querySelector(".b5").classList.remove("act");
+    } else if (h == 19) {
+        document.querySelector(".b51").classList.remove("act");
+        document.querySelector(".n62").classList.add("act");
+    } else if (h == 20) {
+        document.querySelector(".n62").classList.remove("act");
+        if (m < 30) {
+            document.querySelector(".b52").classList.add("act");
+        } else {
+            document.querySelector(".b52").classList.remove("act");
+            document.querySelector(".n7").classList.add("act");
+        };
+    } else if (h == 21) {
         document.querySelector(".n7").classList.add("act");
+    } else if (h == 22) {
+        if (m < 30) {
+            document.querySelector(".n7").classList.add("act");
+        } else {
+            document.querySelector(".n7").classList.remove("act");
+        };
     };
 };
 func();
