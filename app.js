@@ -16,9 +16,8 @@ function func() {
             document.querySelector(".b1").classList.remove("act");
             document.querySelector(".n3").classList.add("act");
         };
-    }
     } else if (h == 11) {
-	    document.querySelector(".n3").classList.add("act");
+        document.querySelector(".n3").classList.add("act");
     } else if (h == 12) {
         if (m < 30) {
             document.querySelector(".b2").classList.add("act");
@@ -27,7 +26,7 @@ function func() {
             document.querySelector(".n4").classList.add("act");
         };
     } else if (h == 13) {
-            document.querySelector(".n4").classList.add("act");
+        document.querySelector(".n4").classList.add("act");
     } else if (h == 14) {
         if (m < 30) {
             document.querySelector(".n4").classList.add("act");
