@@ -2,7 +2,7 @@ function func() {
     const d = new Date();
     let h = d.getHours();
     let m = d.getMinutes();
-    // Morning Shift;
+    //
     if (h == 6 || h == 7) {
         document.querySelector(".n1").classList.add("act");
     } else if (h == 8 || h == 9) {
