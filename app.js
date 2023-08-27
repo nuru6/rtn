@@ -5,15 +5,21 @@ function func() {
     //
     if (h == 6 || h == 7) {
         document.querySelector(".n1").classList.add("act");
-    } else if (h == 8 || h == 9) {
+    } else if (h == 8) {
         document.querySelector(".n1").classList.remove("act");
-        document.querySelector(".n2").classList.add("act");
-    } else if (h == 10) {
-        document.querySelector(".n2").classList.remove("act");
         if (m < 30) {
             document.querySelector(".b1").classList.add("act");
         } else {
             document.querySelector(".b1").classList.remove("act");
+            document.querySelector(".n2").classList.add("act");
+        };
+    } else if (h == 9) {
+        document.querySelector(".n2").classList.add("act");  
+    } else if (h == 10) {
+        if (m < 30) {
+            document.querySelector(".n2").classList.add("act");
+        } else {
+            document.querySelector(".n2").classList.remove("act");
             document.querySelector(".n3").classList.add("act");
         };
     } else if (h == 11) {
