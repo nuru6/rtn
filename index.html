@@ -1,155 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Routine</title>
     <!-- Bootstrap-5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
     <!-- Custom Css -->
     <style>
-        td,
-        th {
-            text-align: center;
-        }
-
-        .act>td {
-            background-color: green !important;
-            color: white !important;
-        }
+      td,
+      th {
+        text-align: center;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <h2 class="text-center my-3">Daily Study Routine</h2>
-    <h6 class="text-center mb-3 text-success">ফজরের সালাত নিজ দায়িত্বে আদায় করবেন</h6>
-        <table class="table table-striped mb-5 border">
-        <thead class="table-dark">
-            <tr>
-                <th scope="col">No</th>
-                <th scope="col">Activity</th>
-                <th scope="col">Start</th>
-                <th scope="col">End</th>
-                <th scope="col">Duration</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="n1">
-                <td scope="row">1</td>
-                <td>English</td>
-                <td>06:00 AM</td>
-                <td>07:59 AM</td>
-                <td>2 Hours</td>
-            </tr>
-            <tr class="b1">
-                <td scope="row">*</td>
-                <td>Food</td>
-                <td>08:00 AM</td>
-                <td>08:29 AM</td>
-                <td>30 Min</td>
-            </tr>
-            <tr class="n2">
-                <td scope="row">2</td>
-                <td>Bangla</td>
-                <td>08:30 AM</td>
-                <td>10:29 AM</td>
-                <td>2 Hours</td>
-            </tr>
-            <tr class="n3">
-                <td scope="row">3</td>
-                <td>ICT</td>
-                <td>10:30 AM</td>
-                <td>11:59 AM</td>
-                <td>1.5 Hours</td>
-            </tr>
-            <tr class="b2">
-                <td scope="row">*</td>
-                <td>Bath & Food</td>
-                <td>12:00 PM</td>
-                <td>12:29 PM</td>
-                <td>30 Min</td>
-            </tr>
-            <tr class="n4">
-                <td scope="row">4</td>
-                <td>Sociology</td>
-                <td>12:30 PM</td>
-                <td>02:29 PM</td>
-                <td>2 Hours</td>
-            </tr>
-            <tr class="b3">
-                <td scope="row">*</td>
-                <td>জোহর</td>
-                <td>02:30 PM</td>
-                <td>02:59 PM</td>
-                <td>30 Min</td>
-            </tr>
-            <tr class="n5">
-                <td scope="row">5</td>
-                <td>Economics</td>
-                <td>03:00 PM</td>
-                <td>04:59 PM</td>
-                <td>2 Hours</td>
-            </tr>
-            <tr class="b4">
-                <td scope="row">*</td>
-                <td>আসর</td>
-                <td>05:00 PM</td>
-                <td>05:29 PM</td>
-                <td>30 Min</td>
-            </tr>
-            <tr class="n61">
-                <td scope="row">6.1</td>
-                <td>Psychology</td>
-                <td>05:30 PM</td>
-                <td>06:29 PM</td>
-                <td>1 Hour</td>
-            </tr>
-            <tr class="b51">
-                <td scope="row">*</td>
-                <td>মাগরিব</td>
-                <td>06:30 PM</td>
-                <td>06:59 PM</td>
-                <td>30 Min</td>
-            </tr>
-            <tr class="n62">
-                <td scope="row">6.2</td>
-                <td>Psychology</td>
-                <td>07:00 PM</td>
-                <td>07:59 PM</td>
-                <td>1 Hour</td>
-            </tr>
-            <tr class="b52">
-                <td scope="row">*</td>
-                <td>Food</td>
-                <td>08:00 PM</td>
-                <td>08:29 PM</td>
-                <td>30 Min</td>
-            </tr>
-            <tr class="b53">
-                <td scope="row">*</td>
-                <td>এসা</td>
-                <td>08:30 PM</td>
-                <td>08:59 PM</td>
-                <td>30 Min</td>
-            </tr>
-            <tr class="n7">
-                <td scope="row">7</td>
-                <td>Civics</td>
-                <td>09:00 PM</td>
-                <td>10:59 PM</td>
-                <td>2 Hours</td>
-            </tr>
-        </tbody>
+    <table class="table mb-5 border">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Activity</th>
+          <th scope="col">Start</th>
+          <th scope="col">End</th>
+          <th scope="col">Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-bg-danger" scope="row">*</td>
+          <td class="text-bg-danger">Wake Up</td>
+          <td class="text-bg-danger">03:01 AM</td>
+          <td class="text-bg-danger">03:10 AM</td>
+          <td class="text-bg-danger">10 Mins</td>
+        </tr>
+        <tr>
+          <td class="text-bg-success" scope="row">1</td>
+          <td class="text-bg-success">English</td>
+          <td class="text-bg-success">03:11 AM</td>
+          <td class="text-bg-success">05:00 AM</td>
+          <td class="text-bg-success">1 Hour 50 Mins</td>
+        </tr>
+        <tr>
+          <td class="text-bg-success" scope="row">2</td>
+          <td class="text-bg-success">Bangla</td>
+          <td class="text-bg-success">05:01 AM</td>
+          <td class="text-bg-success">06:50 AM</td>
+          <td class="text-bg-success">1 Hour 50 Mins</td>
+        </tr>
+        <tr>
+          <td class="text-bg-success" scope="row">3</td>
+          <td class="text-bg-success">ICT</td>
+          <td class="text-bg-success">06:51 PM</td>
+          <td class="text-bg-success">07:50 PM</td>
+          <td class="text-bg-success">1 Hour</td>
+        </tr>
+        <tr>
+          <td class="text-bg-primary" scope="row">*</td>
+          <td class="text-bg-primary">Clg Time Or First Paper</td>
+          <td class="text-bg-primary">07:51 AM</td>
+          <td class="text-bg-primary">03:29 PM</td>
+          <td class="text-bg-primary">7 Hours 40 Mins</td>
+        </tr>
+        <tr>
+          <td class="text-bg-success" scope="row">4</td>
+          <td class="text-bg-success">Psychology</td>
+          <td class="text-bg-success">03:30 PM</td>
+          <td class="text-bg-success">05:00 PM</td>
+          <td class="text-bg-success">1 Hour 30 Mins</td>
+        </tr>
+        <tr>
+          <td class="text-bg-success" scope="row">5</td>
+          <td class="text-bg-success">Civics</td>
+          <td class="text-bg-success">05:01 PM</td>
+          <td class="text-bg-success">06:30 PM</td>
+          <td class="text-bg-success">1 Hour 30 Mins</td>
+        </tr>
+        <tr>
+          <td class="text-bg-danger" scope="row">*</td>
+          <td class="text-bg-danger">Break</td>
+          <td class="text-bg-danger">06:31 AM</td>
+          <td class="text-bg-danger">06:59 AM</td>
+          <td class="text-bg-danger">30 Mins</td>
+        </tr>
+        <tr>
+          <td class="text-bg-success" scope="row">6</td>
+          <td class="text-bg-success">Sociology</td>
+          <td class="text-bg-success">07:00 PM</td>
+          <td class="text-bg-success">08:29 PM</td>
+          <td class="text-bg-success">1 Hour 30 Mins</td>
+        </tr>
+        <tr>
+          <td class="text-bg-success" scope="row">7</td>
+          <td class="text-bg-success">Economics</td>
+          <td class="text-bg-success">08:30 PM</td>
+          <td class="text-bg-success">09:59 PM</td>
+          <td class="text-bg-success">1 Hour 30 Mins</td>
+        </tr>
+        <tr>
+          <td class="text-bg-secondary" scope="row">*</td>
+          <td class="text-bg-secondary">Sleep</td>
+          <td class="text-bg-secondary">10:00 PM</td>
+          <td class="text-bg-secondary">03:00 AM</td>
+          <td class="text-bg-secondary">5 Hours</td>
+        </tr>
+      </tbody>
     </table>
-    <h6 class="text-center mb-5 text-success">Total Study Time -> 13 Hours 30 Minutes</h6>
+    <h6 class="text-center mb-5 text-success">
+      Total Study Time -> 10 Hours 40 Minutes
+    </h6>
     <!-- Custom Js -->
-    <script src="app.js"></script>
-</body>
-
+    <!-- <script src="app.js"></script> -->
+  </body>
 </html>
