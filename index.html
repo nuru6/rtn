@@ -18,9 +18,16 @@
     ></script>
     <!-- Custom Css -->
     <style>
+      body {
+        background-color: beige;
+      }
       td,
       th {
         text-align: center;
+      }
+      .act > td {
+        color: white !important;
+        background-color: black !important;
       }
     </style>
   </head>
@@ -28,111 +35,114 @@
   <body>
     <h2 class="text-center my-3">Daily Routine</h2>
     <table class="table border">
-      <thead class="table-dark">
+      <thead>
         <tr>
-          <th scope="col">No</th>
-          <th scope="col">Activity</th>
-          <th scope="col">Start</th>
-          <th scope="col">End</th>
-          <th scope="col">Duration</th>
+          <th scope="col" class="text-bg-secondary">Activity</th>
+          <th scope="col" class="text-bg-secondary">Start</th>
+          <th scope="col" class="text-bg-secondary">End</th>
+          <th scope="col" class="text-bg-secondary">Ends In</th>
+          <th scope="col" class="text-bg-secondary">Duration</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="text-bg-success" scope="row">1</td>
-          <td class="text-bg-success">English</td>
-          <td class="text-bg-success">04:01 AM</td>
-          <td class="text-bg-success">05:30 AM</td>
+        <tr class="ban">
+          <td class="text-bg-success">Bangla <sub>2nd</sub></td>
+          <td class="text-bg-success">03:30 AM</td>
+          <td class="text-bg-success">04:59 AM</td>
+          <td class="text-bg-success">1 Hour 30 Mins</td>
           <td class="text-bg-success">1 Hour 30 Mins</td>
         </tr>
-        <tr>
-          <td class="text-bg-success" scope="row">2</td>
-          <td class="text-bg-success">Bangla</td>
-          <td class="text-bg-success">05:31 AM</td>
-          <td class="text-bg-success">07:00 AM</td>
+        <tr class="eng">
+          <td class="text-bg-success">English <sub>2nd</sub></td>
+          <td class="text-bg-success">05:00 AM</td>
+          <td class="text-bg-success">06:29 AM</td>
+          <td class="text-bg-success">1 Hour 30 Mins</td>
           <td class="text-bg-success">1 Hour 30 Mins</td>
         </tr>
-        <tr>
-          <td class="text-bg-success" scope="row">3</td>
-          <td class="text-bg-success">ICT</td>
-          <td class="text-bg-success">07:01 AM</td>
-          <td class="text-bg-success">08:00 AM</td>
-          <td class="text-bg-success">1 Hour</td>
+        <tr class="eco">
+          <td class="text-bg-success">Economics <sub>2nd</sub></td>
+          <td class="text-bg-success">06:30 AM</td>
+          <td class="text-bg-success">07:59 AM</td>
+          <td class="text-bg-success">1 Hour 30 Mins</td>
+          <td class="text-bg-success">1 Hour 30 Mins</td>
         </tr>
-        <tr>
-          <td class="text-bg-warning" scope="row">*</td>
-          <td class="text-bg-warning">Clg Time Or First Paper</td>
-          <td class="text-bg-warning">08:01 AM</td>
-          <td class="text-bg-warning">03:30 PM</td>
+        <tr class="clg">
+          <td class="text-bg-warning">Clg / Year <sub>1st</sub></td>
+          <td class="text-bg-warning">08:00 AM</td>
+          <td class="text-bg-warning">03:29 PM</td>
+          <td class="text-bg-warning">7 Hours 40 Mins</td>
           <td class="text-bg-warning">7 Hours 40 Mins</td>
         </tr>
-        <tr>
-          <td class="text-bg-success" scope="row">4</td>
-          <td class="text-bg-success">Psychology</td>
-          <td class="text-bg-success">03:31 PM</td>
-          <td class="text-bg-success">05:00 PM</td>
+        <tr class="ict">
+          <td class="text-bg-success">ICT</td>
+          <td class="text-bg-success">03:30 PM</td>
+          <td class="text-bg-success">03:59 PM</td>
+          <td class="text-bg-success">30 Mins</td>
+          <td class="text-bg-success">30 Mins</td>
+        </tr>
+        <tr class="psy">
+          <td class="text-bg-success">Psychology <sub>2nd</sub></td>
+          <td class="text-bg-success">04:00 PM</td>
+          <td class="text-bg-success">05:29 PM</td>
+          <td class="text-bg-success">1 Hour 30 Mins</td>
           <td class="text-bg-success">1 Hour 30 Mins</td>
         </tr>
-        <tr>
-          <td class="text-bg-danger" scope="row">*</td>
-          <td class="text-bg-danger">Break</td>
-          <td class="text-bg-danger">05:01 PM</td>
-          <td class="text-bg-danger">05:10 PM</td>
-          <td class="text-bg-danger">10 Mins</td>
-        </tr>
-        <tr>
-          <td class="text-bg-success" scope="row">5</td>
-          <td class="text-bg-success">Civics</td>
-          <td class="text-bg-success">05:11 PM</td>
-          <td class="text-bg-success">06:40 PM</td>
+        <tr class="civ">
+          <td class="text-bg-success">Civics <sub>2nd</sub></td>
+          <td class="text-bg-success">05:30 PM</td>
+          <td class="text-bg-success">06:59 PM</td>
+          <td class="text-bg-success">1 Hour 30 Mins</td>
           <td class="text-bg-success">1 Hour 30 Mins</td>
         </tr>
-        <tr>
-          <td class="text-bg-danger" scope="row">*</td>
-          <td class="text-bg-danger">Break</td>
-          <td class="text-bg-danger">06:41 PM</td>
-          <td class="text-bg-danger">06:50 PM</td>
-          <td class="text-bg-danger">10 Mins</td>
-        </tr>
-        <tr>
-          <td class="text-bg-success" scope="row">6</td>
-          <td class="text-bg-success">Sociology</td>
-          <td class="text-bg-success">06:51 PM</td>
-          <td class="text-bg-success">08:20 PM</td>
+        <tr class="soc">
+          <td class="text-bg-success">Sociology <sub>2nd</sub></td>
+          <td class="text-bg-success">07:00 PM</td>
+          <td class="text-bg-success">08:29 PM</td>
+          <td class="text-bg-success">1 Hour 30 Mins</td>
           <td class="text-bg-success">1 Hour 30 Mins</td>
         </tr>
-        <tr>
-          <td class="text-bg-danger" scope="row">*</td>
-          <td class="text-bg-danger">Break</td>
-          <td class="text-bg-danger">08:21 PM</td>
-          <td class="text-bg-danger">08:30 PM</td>
-          <td class="text-bg-danger">10 Mins</td>
-        </tr>
-        <tr>
-          <td class="text-bg-success" scope="row">7</td>
-          <td class="text-bg-success">Economics</td>
-          <td class="text-bg-success">08:31 PM</td>
-          <td class="text-bg-success">10:00 PM</td>
-          <td class="text-bg-success">1 Hour 30 Mins</td>
-        </tr>
-        <tr>
-          <td class="text-bg-primary" scope="row">*</td>
+        <tr class="sle">
           <td class="text-bg-primary">Sleep</td>
-          <td class="text-bg-primary">10:01 PM</td>
-          <td class="text-bg-primary">04:00 AM</td>
-          <td class="text-bg-primary">6 Hours</td>
+          <td class="text-bg-primary">08:30 PM</td>
+          <td class="text-bg-primary">03:29 AM</td>
+          <td class="text-bg-primary">7 Hours</td>
+          <td class="text-bg-primary">7 Hours</td>
         </tr>
       </tbody>
     </table>
     <hr />
-    <h6 class="p-2 m-0 text-center text-bg-success">Study Time -> 10 Hours</h6>
-    <h6 class="p-2 m-0 text-center text-bg-warning">
-      College Time -> 7 Hours 30 Minutes
-    </h6>
-    <h6 class="p-2 m-0 text-center text-bg-danger">Break Time -> 30 Minutes</h6>
-    <h6 class="p-2 m-0 text-center text-bg-primary">Sleep Time -> 6 Hours</h6>
-    <h6 class="p-2 m-0 mb-3 text-center text-bg-dark">Total -> 24 Hours</h6>
+    <table class="table border">
+      <thead>
+        <tr>
+          <th scope="col" class="text-bg-secondary">Activity</th>
+          <th scope="col" class="text-bg-secondary">Times Left</th>
+          <th scope="col" class="text-bg-secondary">Total Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="">
+          <td class="text-bg-success">Study Time</td>
+          <td class="text-bg-success">9 Hours 30 Mins</td>
+          <td class="text-bg-success">9 Hours 30 Mins</td>
+        </tr>
+        <tr class="">
+          <td class="text-bg-warning">College Time</td>
+          <td class="text-bg-warning">7 Hours 30 Mins</td>
+          <td class="text-bg-warning">7 Hours 30 Mins</td>
+        </tr>
+        <tr class="">
+          <td class="text-bg-primary">Sleep Time</td>
+          <td class="text-bg-primary">7 Hours</td>
+          <td class="text-bg-primary">7 Hours</td>
+        </tr>
+        <tr class="">
+          <td class="text-bg-secondary">Total</td>
+          <td class="text-bg-secondary">24 Hours</td>
+          <td class="text-bg-secondary">24 Hours</td>
+        </tr>
+      </tbody>
+    </table>
     <!-- Custom Js -->
-    <!-- <script src="app.js"></script> -->
+    <script src="app.js"></script>
   </body>
 </html>
