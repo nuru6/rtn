@@ -23,7 +23,7 @@ function perSecFunc() {
   }
   // 4 AM;
   if (hour == 4) {
-    ban.classList.add(act);
+    ban.classList.add("act");
   }
   // 5 AM;
   if (hour == 5) {
