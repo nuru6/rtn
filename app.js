@@ -1,258 +1,360 @@
 // Function;
-function perSecFunc() {
+function func() {
   const d = new Date();
   d.setFullYear(2022, 11, 6);
   let hour = d.getHours();
   let min = d.getMinutes();
-  // actFunc;
-  let actFunc = (startAct, endAct) => {
-    document.querySelector("." + startAct).classList.add("act");
-    document.querySelector("." + endAct).classList.remove("act");
-  };
-  // timesLeftFunc;
-  let timesLeftFunc = (index) => {
-    const activities = [
-      "eep_tl",
-      "ban_tl",
-      "eng_tl",
-      "eco_tl",
-      "clg_tl",
-      "ict_tl",
-      "psy_tl",
-      "civ_tl",
-      "soc_tl",
-      "sle_tl",
-    ];
-    for (let i = 0; i < index; i++) {
-      let tl = (document.querySelector("." + activities[i]).innerHTML =
-        "Over");
-    }
-  };
-  // Over Function;
-  let overFunc = (activity) => {
-    let timesLeft = document.querySelector("." + activity);
-    timesLeft.innerHTML = "Over";
-  };
-  // Convert Function;
-  let convertFunc = (left) => {
-    let hour = Math.floor(left / (1000 * 60 * 60));
-    let min = Math.floor((left % (1000 * 60 * 60)) / (1000 * 60));
-    return timeAlignFunc(hour, min);
-  };
-  // Time align Function;
-  let timeAlignFunc = (hour, min) => {
-    if (hour > 1) {
-      if (min > 1) {
-        return hour + " Hours " + min + " Mins";
-      } else {
-        return hour + " Hours " + min + " Min";
-      }
-    } else if (hour == 1) {
-      if (min > 1) {
-        return hour + " Hour " + min + " Mins";
-      } else {
-        return hour + " Hour " + min + " Min";
-      }
-    } else {
-      if (min > 1) {
-        return min + " Mins";
-      } else {
-        return min + " Min";
-      }
-    }
+  // Switch Function;
+  let switchFunc = (endAct, startAct) => {
+    document.querySelector("." + startAct).id = "act";
+    document.querySelector("." + endAct).removeAttribute("id");
   };
   // Timer Function;
   let timerFunc = (endHour, endMin, activity) => {
     let end = new Date(2022, 11, 6, endHour, endMin, 0, 0).getTime();
     let now = d.getTime();
-    let left = end - now;
-    let timesLeft = document.querySelector("." + activity);
-    timesLeft.innerHTML = convertFunc(left);
+    let sub = end - now;
+    document.querySelector("." + activity).innerHTML = convertFunc(sub);
   };
-  // Fix Time Function;
-  let fixTimeFunc = (activity, hour, min) => {
-    let timesLeft = document.querySelector("." + activity);
-    timesLeft.innerHTML = timeAlignFunc(hour, min);
+  // Convert Function;
+  let convertFunc = (sub) => {
+    let hour = Math.floor(sub / (1000 * 60 * 60));
+    let min = Math.floor((sub % (1000 * 60 * 60)) / (1000 * 60));
+    let sec = Math.floor(((sub % (1000 * 60 * 60)) % (1000 * 60)) / 1000);
+    return timeAlignFunc(hour, min, sec);
   };
-  // 12 AM - 2 AM;
-  if (hour >= 0 && hour <= 2) {
-    actFunc("eep", "sle");
-    timerFunc(3, 30, "eep_tl");
-    timerFunc(3 + 3, 30 + 30, "sleepTime");
-    timerFunc(24, 0, "totalTime");
-  }
-  // 3 AM;
-  if (hour == 3) {
-    if (min < 30) {
-      actFunc("eep", "sle");
-      timerFunc(3, 30, "eep_tl");
-      timerFunc(3 + 3, 30 + 30, "sleepTime");
-      timerFunc(24, 0, "totalTime");
+  // Time Align Function;
+  let timeAlignFunc = (hour, min, sec) => {
+    hour = hour < 10 ? "0" + hour : hour;
+    min = min < 10 ? "0" + min : min;
+    sec = sec < 10 ? "0" + sec : sec;
+    if (hour == 0) {
+      return min + " : " + sec;
     } else {
-      actFunc("ban", "eep");
-      timerFunc(5, 0, "ban_tl");
-      timesLeftFunc(1);
-      fixTimeFunc("sleepTime", 3, 30);
-      timerFunc(24, 0, "totalTime");
-      timerFunc(8 + 5, 0, "studyTime");
+      return hour + " : " + min + " : " + sec;
     }
+  };
+  // Time Still Function;
+  let timeStillFunc = (hour, min, activity) => {
+    document.querySelector("." + activity).innerHTML = timeAlignFunc(
+      hour,
+      min,
+      0
+    );
+  };
+  // Set Over Function;
+  let setOverFunc = (index) => {
+    const activities = [
+      "eep_tl",
+      "ban_tl",
+      "eng_tl",
+      "eco_tl",
+      "psy_tl",
+      "ban_1st_tl",
+      "eng_1st_tl",
+      "eco_1st_tl",
+      "psy_1st_tl",
+      "ict_1st_tl",
+      "civ_1st_tl",
+      "soc_1st_tl",
+      "ban_1st_rc_tl",
+      "eng_1st_rc_tl",
+      "eco_1st_rc_tl",
+      "psy_1st_rc_tl",
+      "ict_1st_rc_tl",
+      "civ_1st_rc_tl",
+      "soc_1st_rc_tl",
+      "freeTime_tl",
+      "ict_tl",
+      "civ_tl",
+      "soc_tl",
+      "ban_rc_tl",
+      "eng_rc_tl",
+      "eco_rc_tl",
+      "psy_rc_tl",
+      "civ_rc_tl",
+      "soc_rc_tl",
+      "sle_tl",
+    ];
+    for (let i = 0; i < index; i++) {
+      let tl = (document.querySelector("." + activities[i]).innerHTML = "Over");
+    }
+  };
+  // Over Function;
+  let overFunc = (activity) => {
+    document.querySelector("." + activity).innerHTML = "Over";
+  };
+  // 12 AM - 3 AM;
+  if (hour >= 0 && hour <= 3) {
+    switchFunc("sle", "eep"); // change;
+    timerFunc(4, 0, "eep_tl"); // countdown;
+    timerFunc(4 + 3, 0, "sleepTime"); // overview;
+    timerFunc(24, 0, "totalTime"); // overview;
   }
   // 4 AM;
   if (hour == 4) {
-    actFunc("ban", "eep");
-    timerFunc(5, 0, "ban_tl");
-    timesLeftFunc(1);
-    fixTimeFunc("sleepTime", 3, 30);
-    timerFunc(24, 0, "totalTime");
-    timerFunc(8 + 5, 0, "studyTime");
+    setOverFunc(1); // over;
+    switchFunc("eep", "ban"); // change;
+    timerFunc(5, 0, "ban_tl"); // countdown;
+    timerFunc(21 - 8, 0 + 30, "studyTime"); // overview ;
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
   }
   // 5 AM;
   if (hour == 5) {
-    actFunc("eng", "ban");
-    timerFunc(6, 30, "eng_tl");
-    timesLeftFunc(2);
-    fixTimeFunc("sleepTime", 3, 30);
-    timerFunc(24, 0, "totalTime");
-    timerFunc(8 + 5, 0, "studyTime");
+    setOverFunc(2); // over;
+    switchFunc("ban", "eng"); // change;
+    timerFunc(6, 0, "eng_tl"); // countdown;
+    timerFunc(21 - 8, 0 + 30, "studyTime"); // overview;
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
   }
   // 6 AM;
   if (hour == 6) {
-    if (min < 30) {
-      actFunc("eng", "ban");
-      timerFunc(6, 30, "eng_tl");
-      timesLeftFunc(2);
-      fixTimeFunc("sleepTime", 3, 30);
-      timerFunc(24, 0, "totalTime");
-      timerFunc(8 + 5, 0, "studyTime");
-    } else {
-      actFunc("eco", "eng");
-      timerFunc(8, 0, "eco_tl");
-      timesLeftFunc(3);
-      fixTimeFunc("sleepTime", 3, 30);
-      timerFunc(24, 0, "totalTime");
-      timerFunc(8 + 5, 0, "studyTime");
-    }
+    setOverFunc(3); // over;
+    switchFunc("eng", "eco"); // change;
+    timerFunc(7, 0, "eco_tl"); // countdown;
+    timerFunc(21 - 8, 0 + 30, "studyTime"); // overview;
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
   }
   // 7 AM;
   if (hour == 7) {
-    actFunc("eco", "eng");
-    timerFunc(8, 0, "eco_tl");
-    timesLeftFunc(3);
-    fixTimeFunc("sleepTime", 3, 30);
-    timerFunc(24, 0, "totalTime");
-    timerFunc(8 + 5, 0, "studyTime");
+    setOverFunc(4); // over;
+    switchFunc("eco", "psy"); // change;
+    timerFunc(8, 0, "psy_tl"); // countdown;
+    timerFunc(21 - 8, 0 + 30, "studyTime"); // overview;
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
   }
-  // 8 AM - 2 PM;
-  if (hour >= 8 && hour < 15) {
-    actFunc("clg", "eco");
-    timerFunc(15, 30, "clg_tl");
-    timesLeftFunc(4);
-    fixTimeFunc("sleepTime", 3, 30);
-    timerFunc(24, 0, "totalTime");
-    fixTimeFunc("studyTime", 5, 0);
-    timerFunc(15, 30, "collegeTime");
+  // Year 1st;
+  // 8 AM;
+  if (hour == 8) {
+    if (min < 45) {
+      setOverFunc(5); // over;
+      switchFunc("psy", "ban_1st"); // change;
+      timerFunc(8, 45, "ban_1st_tl"); // countdown;
+    } else {
+      setOverFunc(6); // over;
+      switchFunc("ban_1st", "eng_1st"); // change;
+      timerFunc(9, 30, "eng_1st_tl"); // countdown;
+    }
+    timerFunc(15, 30, "collegeTime"); // overview;
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
+    timeStillFunc(5, 30, "studyTime"); // overview;
+  }
+  // 9 AM;
+  if (hour == 9) {
+    if (min < 30) {
+      setOverFunc(6); // over;
+      switchFunc("ban_1st", "eng_1st"); // change;
+      timerFunc(9, 30, "eng_1st_tl"); // countdown;
+    } else {
+      setOverFunc(7); // over;
+      switchFunc("eng_1st", "eco_1st"); // change;
+      timerFunc(10, 15, "eco_1st_tl"); // countdown;
+    }
+    timerFunc(15, 30, "collegeTime"); // overview;
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
+    timeStillFunc(5, 30, "studyTime"); // overview;
+  }
+  // 10 AM;
+  if (hour == 10) {
+    if (min < 15) {
+      setOverFunc(7); // over;
+      switchFunc("eng_1st", "eco_1st"); // change;
+      timerFunc(10, 15, "eco_1st_tl"); // countdown;
+    } else {
+      setOverFunc(8); // over;
+      switchFunc("eco_1st", "psy_1st"); // change;
+      timerFunc(11, 0, "psy_1st_tl"); // countdown;
+    }
+    timerFunc(15, 30, "collegeTime"); // overview;
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
+    timeStillFunc(5, 30, "studyTime"); // overview;
+  }
+  // 11 AM;
+  if (hour == 11) {
+    if (min < 45) {
+      setOverFunc(9); // over;
+      switchFunc("psy_1st", "ict_1st"); // change;
+      timerFunc(11, 45, "ict_1st_tl"); // countdown;
+    } else {
+      setOverFunc(10); // over;
+      switchFunc("ict_1st", "civ_1st"); // change;
+      timerFunc(12, 30, "civ_1st_tl"); // countdown;
+    }
+    timerFunc(15, 30, "collegeTime"); // overview;
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
+    timeStillFunc(5, 30, "studyTime"); // overview;
+  }
+  // 12 PM;
+  if (hour == 12) {
+    if (min < 30) {
+      setOverFunc(10); // over;
+      switchFunc("ict_1st", "civ_1st"); // change;
+      timerFunc(12, 30, "civ_1st_tl"); // countdown;
+    } else {
+      setOverFunc(11); // over;
+      switchFunc("civ_1st", "soc_1st"); // change;
+      timerFunc(13, 15, "soc_1st_tl"); // countdown;
+    }
+    timerFunc(15, 30, "collegeTime"); // overview;
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
+    timeStillFunc(5, 30, "studyTime"); // overview;
+  }
+  // 1 PM;
+  if (hour == 13) {
+    if (min < 15) {
+      setOverFunc(11); // over;
+      switchFunc("civ_1st", "soc_1st"); // change;
+      timerFunc(13, 15, "soc_1st_tl"); // countdown;
+    } else if (min < 30) {
+      setOverFunc(12); // over;
+      switchFunc("soc_1st", "ban_1st_rc"); // change;
+      timerFunc(13, 30, "ban_1st_rc_tl"); // countdown;
+    } else if (min < 45) {
+      setOverFunc(13); // over;
+      switchFunc("ban_1st_rc", "eng_1st_rc"); // change;
+      timerFunc(13, 45, "eng_1st_rc_tl"); // countdown;
+    } else {
+      setOverFunc(14); // over;
+      switchFunc("eng_1st_rc", "eco_1st_rc"); // change;
+      timerFunc(14, 0, "eco_1st_rc_tl"); // countdown;
+    }
+    timerFunc(15, 30, "collegeTime"); // overview;
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
+    timeStillFunc(5, 30, "studyTime"); // overview;
+  }
+  // 2 PM;
+  if (hour == 14) {
+    if (min < 15) {
+      setOverFunc(15); // over;
+      switchFunc("eco_1st_rc", "psy_1st_rc"); // change;
+      timerFunc(14, 15, "psy_1st_rc_tl"); // countdown;
+    } else if (min < 30) {
+      setOverFunc(16); // over;
+      switchFunc("psy_1st_rc", "ict_1st_rc"); // change;
+      timerFunc(14, 30, "ict_1st_rc_tl"); // countdown;
+    } else if (min < 45) {
+      setOverFunc(17); // over;
+      switchFunc("ict_1st_rc", "civ_1st_rc"); // change;
+      timerFunc(14, 45, "civ_1st_rc_tl"); // countdown;
+    } else {
+      setOverFunc(18); // over;
+      switchFunc("civ_1st_rc", "soc_1st_rc"); // change;
+      timerFunc(15, 0, "soc_1st_rc_tl"); // countdown;
+    }
+    timerFunc(15, 30, "collegeTime"); // overview;
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
+    timeStillFunc(5, 30, "studyTime"); // overview;
   }
   // 3 PM;
   if (hour == 15) {
     if (min < 30) {
-      actFunc("clg", "eco");
-      timerFunc(15, 30, "clg_tl");
-      timesLeftFunc(4);
-      fixTimeFunc("sleepTime", 3, 30);
-      timerFunc(24, 0, "totalTime");
-      fixTimeFunc("studyTime", 5, 0);
-      timerFunc(15, 30, "collegeTime");
+      setOverFunc(19); // over;
+      switchFunc("soc_1st_rc", "freeTime"); // change;
+      timerFunc(15, 30, "freeTime_tl"); // countdown;
+      timerFunc(15, 30, "collegeTime"); // overview;
+      timerFunc(24, 0, "totalTime"); // overview;
+      timeStillFunc(3, 0, "sleepTime"); // overview;
+      timeStillFunc(5, 30, "studyTime"); // overview;
     } else {
-      actFunc("ict", "clg");
-      timerFunc(16, 0, "ict_tl");
-      timesLeftFunc(5);
-      fixTimeFunc("sleepTime", 3, 30);
-      timerFunc(24, 0, "totalTime");
-      timerFunc(20, 30, "studyTime");
-      overFunc("collegeTime");
+      setOverFunc(20); // over;
+      switchFunc("freeTime", "ict"); // change;
+      timerFunc(16, 0, "ict_tl"); // countdown;
+      timerFunc(24, 0, "totalTime"); // overview;
+      timeStillFunc(3, 0, "sleepTime"); // overview;
+      timerFunc(21, 0, "studyTime"); // overview;
+      overFunc("collegeTime"); // overview;
     }
   }
   // 4 PM;
   if (hour == 16) {
-    actFunc("psy", "ict");
-    timerFunc(17, 30, "psy_tl");
-    timesLeftFunc(6);
-    fixTimeFunc("sleepTime", 3, 30);
-    timerFunc(24, 0, "totalTime");
-    timerFunc(20, 30, "studyTime");
-    overFunc("collegeTime");
+    setOverFunc(21); // over;
+    switchFunc("ict", "civ"); // change;
+    timerFunc(17, 0, "civ_tl"); // countdown;
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
+    timerFunc(21, 0, "studyTime"); // overview;
+    overFunc("collegeTime"); // overview;
   }
   // 5 PM;
   if (hour == 17) {
-    if (min < 30) {
-      actFunc("psy", "ict");
-      timerFunc(17, 30, "psy_tl");
-      timesLeftFunc(6);
-      fixTimeFunc("sleepTime", 3, 30);
-      timerFunc(24, 0, "totalTime");
-      timerFunc(20, 30, "studyTime");
-      overFunc("collegeTime");
-    } else {
-      actFunc("civ", "psy");
-      timerFunc(19, 0, "civ_tl");
-      timesLeftFunc(7);
-      fixTimeFunc("sleepTime", 3, 30);
-      timerFunc(24, 0, "totalTime");
-      timerFunc(20, 30, "studyTime");
-      overFunc("collegeTime");
-    }
+    setOverFunc(22); // over;
+    switchFunc("civ", "soc"); // change;
+    timerFunc(18, 0, "soc_tl"); // countdown;
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
+    timerFunc(21, 0, "studyTime"); // overview;
+    overFunc("collegeTime"); // overview;
   }
   // 6 PM;
   if (hour == 18) {
-    actFunc("civ", "psy");
-    timerFunc(19, 0, "civ_tl");
-    timesLeftFunc(7);
-    fixTimeFunc("sleepTime", 3, 30);
-    timerFunc(24, 0, "totalTime");
-    timerFunc(20, 30, "studyTime");
-    overFunc("collegeTime");
+    if (min < 30) {
+      setOverFunc(23); // over;
+      switchFunc("soc", "ban_rc"); // change;
+      timerFunc(18, 30, "ban_rc_tl"); // countdown;
+    } else {
+      setOverFunc(24); // over;
+      switchFunc("ban_rc", "eng_rc"); // change;
+      timerFunc(19, 0, "eng_rc_tl"); // countdown;
+    }
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
+    timerFunc(21, 0, "studyTime"); // overview;
+    overFunc("collegeTime"); // overview;
   }
   // 7 PM;
   if (hour == 19) {
-    actFunc("soc", "civ");
-    timerFunc(20, 30, "soc_tl");
-    timesLeftFunc(8);
-    fixTimeFunc("sleepTime", 3, 30);
-    timerFunc(24, 0, "totalTime");
-    timerFunc(20, 30, "studyTime");
-    overFunc("collegeTime");
+    if (min < 30) {
+      setOverFunc(25); // over;
+      switchFunc("eng_rc", "eco_rc"); // change;
+      timerFunc(19, 30, "eco_rc_tl"); // countdown;
+    } else {
+      setOverFunc(26); // over;
+      switchFunc("eco_rc", "psy_rc"); // change;
+      timerFunc(20, 0, "psy_rc_tl"); // countdown;
+    }
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
+    timerFunc(21, 0, "studyTime"); // overview;
+    overFunc("collegeTime"); // overview;
   }
   // 8 PM;
   if (hour == 20) {
     if (min < 30) {
-      actFunc("soc", "civ");
-      timerFunc(20, 30, "soc_tl");
-      timesLeftFunc(8);
-      fixTimeFunc("sleepTime", 3, 30);
-      timerFunc(24, 0, "totalTime");
-      timerFunc(20, 30, "studyTime");
-      overFunc("collegeTime");
+      setOverFunc(27); // over;
+      switchFunc("psy_rc", "civ_rc"); // change;
+      timerFunc(20, 30, "civ_rc_tl"); // countdown;
     } else {
-      actFunc("sle", "soc");
-      timerFunc(24, 0, "sle_tl");
-      timesLeftFunc(9);
-      fixTimeFunc("sleepTime", 3, 30);
-      timerFunc(24, 0, "totalTime");
-      overFunc("studyTime");
-      overFunc("collegeTime");
+      setOverFunc(28); // over;
+      switchFunc("civ_rc", "soc_rc"); // change;
+      timerFunc(21, 0, "soc_rc_tl"); // countdown;
     }
+    timerFunc(24, 0, "totalTime"); // overview;
+    timeStillFunc(3, 0, "sleepTime"); // overview;
+    timerFunc(21, 0, "studyTime"); // overview;
+    overFunc("collegeTime"); // overview;
   }
   // 9 PM - 11 PM;
   if (hour >= 21 && hour <= 23) {
-    actFunc("sle", "soc");
-    timerFunc(24, 0, "sle_tl");
-    timesLeftFunc(9);
-    timerFunc(24, 0,"sleepTime");
-    timerFunc(24, 0, "totalTime");
-    overFunc("studyTime");
-    overFunc("collegeTime");
+    setOverFunc(29); // over;
+    switchFunc("soc_rc", "sle"); // change;
+    timerFunc(24, 0, "sle_tl"); // countdown;
+    timerFunc(24, 0, "totalTime"); // overview;
+    timerFunc(24, 0, "sleepTime"); // overview;
+    overFunc("studyTime"); // overview;
+    overFunc("collegeTime"); // overview;
   }
 }
 // Calling Function;
-perSecFunc();
-setInterval(perSecFunc, 1000);
+func();
+setInterval(func, 1000);
