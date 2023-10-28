@@ -17,19 +17,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- Custom Css -->
-    <style>
-      body {
-        background-color: beige;
-      }
-      td,
-      th {
-        text-align: center;
-      }
-      #act > td {
-        color: white !important;
-        background-color: black !important;
-      }
-    </style>
+    <link rel="stylesheet" href="custom.css" />
   </head>
 
   <body>
@@ -38,8 +26,8 @@
       <thead>
         <tr>
           <th scope="col" class="text-bg-dark">Activity</th>
-          <th scope="col" class="text-bg-dark">Total Time</th>
-          <th scope="col" class="text-bg-dark">Times Left</th>
+          <th scope="col" class="text-bg-dark">Total</th>
+          <th scope="col" class="text-bg-dark">Left</th>
         </tr>
       </thead>
       <tbody>
@@ -74,7 +62,7 @@
           <th scope="col" class="text-bg-dark">Start</th>
           <th scope="col" class="text-bg-dark">End</th>
           <th scope="col" class="text-bg-dark">Duration</th>
-          <th scope="col" class="text-bg-dark">Times Left</th>
+          <th scope="col" class="text-bg-dark">Left</th>
         </tr>
       </thead>
       <tbody>
@@ -165,61 +153,75 @@
         </tr>
         <!-- Year 1st Recall -->
         <tr class="ban_1st_rc">
-          <td class="text-bg-info">Bangla <sub>1st-RC</sub></td>
-          <td class="text-bg-info">01:15 PM</td>
-          <td class="text-bg-info">01:29 PM</td>
-          <td class="text-bg-info">15 Mins</td>
-          <td class="text-bg-info ban_1st_rc_tl">15 Mins</td>
+          <td class="text-bg-primary bg-opacity-75">
+            Bangla - Recall <sub>1st</sub>
+          </td>
+          <td class="text-bg-primary bg-opacity-75">01:15 PM</td>
+          <td class="text-bg-primary bg-opacity-75">01:29 PM</td>
+          <td class="text-bg-primary bg-opacity-75">15 Mins</td>
+          <td class="text-bg-primary bg-opacity-75 ban_1st_rc_tl">15 Mins</td>
         </tr>
         <tr class="eng_1st_rc">
-          <td class="text-bg-info">English <sub>1st-RC</sub></td>
-          <td class="text-bg-info">01:30 PM</td>
-          <td class="text-bg-info">01:44 PM</td>
-          <td class="text-bg-info">15 Mins</td>
-          <td class="text-bg-info eng_1st_rc_tl">15 Mins</td>
+          <td class="text-bg-primary bg-opacity-75">
+            English - Recall <sub>1st</sub>
+          </td>
+          <td class="text-bg-primary bg-opacity-75">01:30 PM</td>
+          <td class="text-bg-primary bg-opacity-75">01:44 PM</td>
+          <td class="text-bg-primary bg-opacity-75">15 Mins</td>
+          <td class="text-bg-primary bg-opacity-75 eng_1st_rc_tl">15 Mins</td>
         </tr>
         <tr class="eco_1st_rc">
-          <td class="text-bg-info">Economics <sub>1st-RC</sub></td>
-          <td class="text-bg-info">01:45 PM</td>
-          <td class="text-bg-info">01:59 PM</td>
-          <td class="text-bg-info">15 Mins</td>
-          <td class="text-bg-info eco_1st_rc_tl">15 Mins</td>
+          <td class="text-bg-primary bg-opacity-75">
+            Economics - Recall <sub>1st</sub>
+          </td>
+          <td class="text-bg-primary bg-opacity-75">01:45 PM</td>
+          <td class="text-bg-primary bg-opacity-75">01:59 PM</td>
+          <td class="text-bg-primary bg-opacity-75">15 Mins</td>
+          <td class="text-bg-primary bg-opacity-75 eco_1st_rc_tl">15 Mins</td>
         </tr>
         <tr class="psy_1st_rc">
-          <td class="text-bg-info">Psychology <sub>1st-RC</sub></td>
-          <td class="text-bg-info">02:00 PM</td>
-          <td class="text-bg-info">02:14 PM</td>
-          <td class="text-bg-info">15 Mins</td>
-          <td class="text-bg-info psy_1st_rc_tl">15 Mins</td>
+          <td class="text-bg-primary bg-opacity-75">
+            Psychology - Recall <sub>1st</sub>
+          </td>
+          <td class="text-bg-primary bg-opacity-75">02:00 PM</td>
+          <td class="text-bg-primary bg-opacity-75">02:14 PM</td>
+          <td class="text-bg-primary bg-opacity-75">15 Mins</td>
+          <td class="text-bg-primary bg-opacity-75 psy_1st_rc_tl">15 Mins</td>
         </tr>
         <tr class="ict_1st_rc">
-          <td class="text-bg-info">ICT <sub>1st-RC</sub></td>
-          <td class="text-bg-info">02:15 PM</td>
-          <td class="text-bg-info">02:29 PM</td>
-          <td class="text-bg-info">15 Mins</td>
-          <td class="text-bg-info ict_1st_rc_tl">15 Mins</td>
+          <td class="text-bg-primary bg-opacity-75">
+            ICT - Recall <sub>1st</sub>
+          </td>
+          <td class="text-bg-primary bg-opacity-75">02:15 PM</td>
+          <td class="text-bg-primary bg-opacity-75">02:29 PM</td>
+          <td class="text-bg-primary bg-opacity-75">15 Mins</td>
+          <td class="text-bg-primary bg-opacity-75 ict_1st_rc_tl">15 Mins</td>
         </tr>
         <tr class="civ_1st_rc">
-          <td class="text-bg-info">Civics <sub>1st-RC</sub></td>
-          <td class="text-bg-info">02:30 PM</td>
-          <td class="text-bg-info">02:44 PM</td>
-          <td class="text-bg-info">15 Mins</td>
-          <td class="text-bg-info civ_1st_rc_tl">15 Mins</td>
+          <td class="text-bg-primary bg-opacity-75">
+            Civics - Recall <sub>1st</sub>
+          </td>
+          <td class="text-bg-primary bg-opacity-75">02:30 PM</td>
+          <td class="text-bg-primary bg-opacity-75">02:44 PM</td>
+          <td class="text-bg-primary bg-opacity-75">15 Mins</td>
+          <td class="text-bg-primary bg-opacity-75 civ_1st_rc_tl">15 Mins</td>
         </tr>
         <tr class="soc_1st_rc">
-          <td class="text-bg-info">Sociology <sub>1st-RC</sub></td>
-          <td class="text-bg-info">02:45 PM</td>
-          <td class="text-bg-info">02:59 PM</td>
-          <td class="text-bg-info">15 Mins</td>
-          <td class="text-bg-info soc_1st_rc_tl">15 Mins</td>
+          <td class="text-bg-primary bg-opacity-75">
+            Sociology - Recall <sub>1st</sub>
+          </td>
+          <td class="text-bg-primary bg-opacity-75">02:45 PM</td>
+          <td class="text-bg-primary bg-opacity-75">02:59 PM</td>
+          <td class="text-bg-primary bg-opacity-75">15 Mins</td>
+          <td class="text-bg-primary bg-opacity-75 soc_1st_rc_tl">15 Mins</td>
         </tr>
         <!-- Free Time -->
         <tr class="freeTime">
-          <td class="text-bg-danger">Free Time</td>
-          <td class="text-bg-danger">03:00 PM</td>
-          <td class="text-bg-danger">03:29 PM</td>
-          <td class="text-bg-danger">30 Mins</td>
-          <td class="text-bg-danger freeTime_tl">30 Mins</td>
+          <td class="text-bg-dark bg-opacity-50">Free Time</td>
+          <td class="text-bg-dark bg-opacity-50">03:00 PM</td>
+          <td class="text-bg-dark bg-opacity-50">03:29 PM</td>
+          <td class="text-bg-dark bg-opacity-50">30 Mins</td>
+          <td class="text-bg-dark bg-opacity-50 freeTime_tl">30 Mins</td>
         </tr>
         <!-- College End -->
         <tr class="ict">
@@ -245,46 +247,58 @@
         </tr>
         <!-- Recall -->
         <tr class="ban_rc">
-          <td class="text-bg-warning">Bangla <sub>2nd-RC</sub></td>
-          <td class="text-bg-warning">06:00 PM</td>
-          <td class="text-bg-warning">06:29 PM</td>
-          <td class="text-bg-warning">30 Mins</td>
-          <td class="text-bg-warning ban_rc_tl">30 Mins</td>
+          <td class="text-bg-success bg-opacity-75">
+            Bangla - Recall <sub>2nd</sub>
+          </td>
+          <td class="text-bg-success bg-opacity-75">06:00 PM</td>
+          <td class="text-bg-success bg-opacity-75">06:29 PM</td>
+          <td class="text-bg-success bg-opacity-75">30 Mins</td>
+          <td class="text-bg-success bg-opacity-75 ban_rc_tl">30 Mins</td>
         </tr>
         <tr class="eng_rc">
-          <td class="text-bg-warning">English <sub>2nd-RC</sub></td>
-          <td class="text-bg-warning">06:30 PM</td>
-          <td class="text-bg-warning">06:59 PM</td>
-          <td class="text-bg-warning">30 Mins</td>
-          <td class="text-bg-warning eng_rc_tl">30 Mins</td>
+          <td class="text-bg-success bg-opacity-75">
+            English - Recall <sub>2nd</sub>
+          </td>
+          <td class="text-bg-success bg-opacity-75">06:30 PM</td>
+          <td class="text-bg-success bg-opacity-75">06:59 PM</td>
+          <td class="text-bg-success bg-opacity-75">30 Mins</td>
+          <td class="text-bg-success bg-opacity-75 eng_rc_tl">30 Mins</td>
         </tr>
         <tr class="eco_rc">
-          <td class="text-bg-warning">Economics <sub>2nd-RC</sub></td>
-          <td class="text-bg-warning">07:00 PM</td>
-          <td class="text-bg-warning">07:29 PM</td>
-          <td class="text-bg-warning">30 Mins</td>
-          <td class="text-bg-warning eco_rc_tl">30 Mins</td>
+          <td class="text-bg-success bg-opacity-75">
+            Economics - Recall <sub>2nd</sub>
+          </td>
+          <td class="text-bg-success bg-opacity-75">07:00 PM</td>
+          <td class="text-bg-success bg-opacity-75">07:29 PM</td>
+          <td class="text-bg-success bg-opacity-75">30 Mins</td>
+          <td class="text-bg-success bg-opacity-75 eco_rc_tl">30 Mins</td>
         </tr>
         <tr class="psy_rc">
-          <td class="text-bg-warning">Psychology <sub>2nd-RC</sub></td>
-          <td class="text-bg-warning">07:30 PM</td>
-          <td class="text-bg-warning">07:59 PM</td>
-          <td class="text-bg-warning">30 Mins</td>
-          <td class="text-bg-warning psy_rc_tl">30 Mins</td>
+          <td class="text-bg-success bg-opacity-75">
+            Psychology - Recall <sub>2nd</sub>
+          </td>
+          <td class="text-bg-success bg-opacity-75">07:30 PM</td>
+          <td class="text-bg-success bg-opacity-75">07:59 PM</td>
+          <td class="text-bg-success bg-opacity-75">30 Mins</td>
+          <td class="text-bg-success bg-opacity-75 psy_rc_tl">30 Mins</td>
         </tr>
         <tr class="civ_rc">
-          <td class="text-bg-warning">Civics <sub>2nd-RC</sub></td>
-          <td class="text-bg-warning">08:00 PM</td>
-          <td class="text-bg-warning">08:29 PM</td>
-          <td class="text-bg-warning">30 Mins</td>
-          <td class="text-bg-warning civ_rc_tl">30 Mins</td>
+          <td class="text-bg-success bg-opacity-75">
+            Civics - Recall <sub>2nd</sub>
+          </td>
+          <td class="text-bg-success bg-opacity-75">08:00 PM</td>
+          <td class="text-bg-success bg-opacity-75">08:29 PM</td>
+          <td class="text-bg-success bg-opacity-75">30 Mins</td>
+          <td class="text-bg-success bg-opacity-75 civ_rc_tl">30 Mins</td>
         </tr>
         <tr class="soc_rc">
-          <td class="text-bg-warning">Sociology <sub>2nd-RC</sub></td>
-          <td class="text-bg-warning">08:30 PM</td>
-          <td class="text-bg-warning">08:59 PM</td>
-          <td class="text-bg-warning">30 Mins</td>
-          <td class="text-bg-warning soc_rc_tl">30 Mins</td>
+          <td class="text-bg-success bg-opacity-75">
+            Sociology - Recall <sub>2nd</sub>
+          </td>
+          <td class="text-bg-success bg-opacity-75">08:30 PM</td>
+          <td class="text-bg-success bg-opacity-75">08:59 PM</td>
+          <td class="text-bg-success bg-opacity-75">30 Mins</td>
+          <td class="text-bg-success bg-opacity-75 soc_rc_tl">30 Mins</td>
         </tr>
         <!-- Recall End -->
         <tr class="sle">
