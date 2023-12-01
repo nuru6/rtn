@@ -3,14 +3,20 @@
   padding: 0;
 }
 body {
-  background-color: beige;
+  background-color: #4169e1;
+  color: white;
+  padding: 12px 0;
 }
-td,
-th {
-  text-align: center;
-  font-weight: bold;
+ol, h5{
+  padding: 0 10%;
 }
-#act > td {
-  color: hotpink !important;
-  background-color: black !important;
+ol li, p {
+  font-size: 24px;
+  padding: 12px 4px;
+}
+.friday li, .holiday li, .college li, p {
+  color: hotpink;
+}
+span {
+  color: black;
 }
